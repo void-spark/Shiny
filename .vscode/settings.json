@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "array": "c",
+        "string_view": "c",
+        "functional": "cpp",
+        "esp_http_ota.h": "c"
+    }
+}

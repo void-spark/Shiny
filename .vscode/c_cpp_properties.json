@@ -1,0 +1,64 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/build/include",
+                "${workspaceFolder}/components/esp32_digital_led_lib/include",
+                "${workspaceFolder}/components/LedBlink2/include",
+                "${workspaceFolder}/components/mad/include",
+                "${workspaceFolder}/components/esp_http_ota/include",
+                "C:/Portable/msys32-esp32-20180110/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include",
+                "C:/Portable/msys32-esp32-20180110/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/spi_flash/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/esp32/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/freertos/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/newlib/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/soc/esp32/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/heap/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/soc/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/driver/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/tcpip_adapter/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/nvs_flash/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/log/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/lwip/include/lwip",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/lwip/include/lwip/port",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/mqtt/esp-mqtt/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/vfs/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/fatfs/src",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/wear_levelling/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/sdmmc/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/lwip/lwip/src/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/lwip/port/esp32/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/newlib/platform_include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/lwip/include/apps",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/esp_ringbuf/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/app_update/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/esp_http_client/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/nghttp/port/include",
+                "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components/esp_event/include"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "C:/Portable/msys32-esp32-20180110/home/Jeroen/esp/esp-idf/components",
+                    "C:/Portable/msys32-esp32-20180110/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include",
+                    "C:/Portable/msys32-esp32-20180110/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "defines": [
+                "ESP_PLATFORM",
+                "configUSE_TIMERS=1",
+                "configSUPPORT_DYNAMIC_ALLOCATION=1",
+                "configUSE_QUEUE_SETS=1"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++11"
+        }
+    ],
+    "version": 4
+}
