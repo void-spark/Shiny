@@ -10,13 +10,11 @@
 #include "esp_http_client.h"
 #include "esp_http_ota.h"
 #include "esp_spi_flash.h"
+#include "nvs.h"
 #include "nvs_flash.h"
 #include "driver/gpio.h"
 #include "driver/ledc.h"
 #include "mqtt_client.h"
-
-#include "nvs.h"
-#include "nvs_flash.h"
 
 // WiFi credentials.
 #define WIFI_SSID "Milkrun"

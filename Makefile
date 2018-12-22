@@ -6,4 +6,3 @@
 PROJECT_NAME := shiny
 
 include $(IDF_PATH)/make/project.mk
-
