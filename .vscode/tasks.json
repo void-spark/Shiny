@@ -54,6 +54,17 @@
             "problemMatcher": []
         }
         {
+            "label": "Upgrade",
+            "type": "shell",
+            "command": ".\\upgrade.cmd",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true
+            },
+            "problemMatcher": []
+        }
+        {
             "label": "Host port",
             "type": "shell",
             "command": ".\\buildscripts\\host_port.cmd",

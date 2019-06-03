@@ -88,7 +88,8 @@ static esp_err_t mqtt_event_handler(esp_mqtt_event_handle_t event) {
             ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
             xEventGroupSetBits(app_event_group, MQTT_CONNECTED_BIT);
             int msg_id = esp_mqtt_client_subscribe(client, "/ledstrip1/#", 2);
-            ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);            
+            ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
+            msg_id = esp_mqtt_client_publish(mqttClient, "/ledstrip1/online", "true", 0, 1, 0);       
             break;
         case MQTT_EVENT_DISCONNECTED:
             ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
