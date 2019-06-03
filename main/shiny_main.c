@@ -81,6 +81,9 @@ static esp_err_t event_handler(void *ctx, system_event_t *event) {
 static esp_err_t mqtt_event_handler(esp_mqtt_event_handle_t event) {
     esp_mqtt_client_handle_t client = event->client;
     switch (event->event_id) {
+        case MQTT_EVENT_BEFORE_CONNECT:
+            ESP_LOGI(TAG, "MQTT_EVENT_BEFORE_CONNECT");
+            break;
         case MQTT_EVENT_CONNECTED:
             ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
             xEventGroupSetBits(app_event_group, MQTT_CONNECTED_BIT);

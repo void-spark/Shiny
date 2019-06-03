@@ -1,6 +1,13 @@
+# My configuration options
 CONFIG_ESPTOOLPY_PORT="rfc2217://host.docker.internal:2217"
 CONFIG_ESPTOOLPY_BAUD_921600B=y
+
+# My chips are 4MB flash, once you use OTA this settings matters
 CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+
+# Set up partitions for OTA
 CONFIG_PARTITION_TABLE_TWO_OTA=y
+
+# All the speed for WS8212, RF handling, etc.
 CONFIG_ESP32_DEFAULT_CPU_FREQ_240=y
 CONFIG_FREERTOS_HZ=1000
