@@ -1,14 +1,15 @@
 #include <stdio.h>
+#include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
 #include "esp_system.h"
 #include "esp_wifi.h"
-#include "esp_event_loop.h"
+#include "esp_event.h"
 #include "esp_log.h"
 #include "esp_ota_ops.h"
 #include "esp_http_client.h"
-#include "esp_http_ota.h"
+#include "esp_https_ota.h"
 #include "esp_spi_flash.h"
 #include "nvs.h"
 #include "nvs_flash.h"
@@ -47,7 +48,7 @@ static void ota_task(void * pvParameter) {
     esp_http_client_config_t config = {
         .url = ota_url,
     };
-    esp_err_t ret = esp_http_ota(&config);
+    esp_err_t ret = esp_https_ota(&config);
     if (ret == ESP_OK) {
         esp_restart();
     } else {
@@ -64,8 +65,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event) {
         esp_wifi_connect();
         break;
     case SYSTEM_EVENT_STA_GOT_IP:
-        ESP_LOGI(TAG, "got ip:%s",
-                 ip4addr_ntoa(&event->event_info.got_ip.ip_info.ip));
+        ESP_LOGI(TAG, "ot ip:"IPSTR, IP2STR(&event->event_info.got_ip.ip_info.ip));    
         xEventGroupSetBits(app_event_group, WIFI_CONNECTED_BIT);
         break;
     case SYSTEM_EVENT_STA_DISCONNECTED:
@@ -148,6 +148,9 @@ static esp_err_t mqtt_event_handler(esp_mqtt_event_handle_t event) {
         case MQTT_EVENT_ERROR:
             ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
             break;
+        default:
+            ESP_LOGI(TAG, "Other event id:%d", event->event_id);
+            break;
     }
     return ESP_OK;
 }
@@ -187,7 +190,6 @@ static void mqtt_app_start(void) {
 
 void app_main() {
     // The LED pin should be on by default
-    gpio_pad_select_gpio(BLINK_GPIO);
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
     gpio_set_level(BLINK_GPIO, 1);
 

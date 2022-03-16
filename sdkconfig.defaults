@@ -8,6 +8,9 @@ CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
 # Set up partitions for OTA
 CONFIG_PARTITION_TABLE_TWO_OTA=y
 
+# Yes we know what we're doing and want plain HTTP
+CONFIG_OTA_ALLOW_HTTP=y
+
 # All the speed for WS8212, RF handling, etc.
 CONFIG_ESP32_DEFAULT_CPU_FREQ_240=y
 CONFIG_FREERTOS_HZ=1000
